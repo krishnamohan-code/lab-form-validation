@@ -15,26 +15,30 @@
 // console.log(checkEmail(email))
 function checkUserName(){
     var username  = document.getElementById("usertext");
+    console.log(username);
+    console.log(username.value.length);
+    
+    
     var regExu = /[!@#$%^&*()_]/;
-    if(username !="")
+    if(username.value =="")
     {
     alert("Username should not be null");
-    return false;
+     return false;
     }
-    else if(username.length.trim()>9 && username.length.trim()<15)
+    else if(username.value.length>9 && username.value.length>15)
     {
     alert("Username should be a minimum of 8 characters and should be less than 15 characters");
-    return false;
+     return false;
     }
-    else if(regExu.test(username))
+    else if(regExu.test(username.value))
     {
     alert("Username should not contain special characters");
-    return false;
+     return false;
     }
     else
     {
     alert("Valid");
-    return true;
+     return true;
       }
 }
 // Progression 2 
@@ -45,17 +49,19 @@ function checkUserName(){
 // return true if it passses all validation and false otherwise
 function checkEmail(){
     var emaill = document.getElementById("emailtext");
+    console.log(emaill);
+    
     var regExe = /^([A-Za-z0-9_\-\.])+@([A-Za-z0-9_\-])+.([A-Za-z]{2,10})$/;
 
-    if(regExe.test(emaill))
+    if(regExe.test(emaill.value))
     {
     alert("Valid");
-    return true;
+    // return true;
     }
     else
     {
     alert("Wrong email");
-    return false;
+    // return false;
     }
 }
 // Progression 3
@@ -66,15 +72,17 @@ function checkEmail(){
 // return true else return false
 function checkPassword(){
     var password = document.getElementById("passwordtext");
+    console.log(password);
+    
     var regExp = /^[a-zA-Z0-9!@#$%^&*()_]$/;
-    if(regExp.test(password))
+    if(regExp.test(password.value))
     {
     alert("Valid");
-    return true;
+    // return true;
     }
     else{
-        alert("Password must contain atleast one Uppercase,one Lwercase, one number and special characters");
-        return false;
+        alert("Password must contain atleast one Uppercase,one Lowercase, one number and special characters");
+        // return false;
     }
     
 }
